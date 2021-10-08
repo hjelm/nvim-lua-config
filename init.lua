@@ -21,31 +21,15 @@ vim.opt.smarttab = true
 vim.opt.smartcase = true
 vim.opt.mouse = 'a'
 vim.opt.timeoutlen = 500
+vim.opt.linebreak = true
 vim.g.mapleader = ' '
 
 -- Use OSX clipboard to copy and to paste
 vim.cmd[[set clipboard+=unnamedplus]]
 vim.cmd[[colorscheme gruvbox8_hard]]
+vim.cmd[[syntax on]]
 
 require('plugins')
 require('maps')
 
--- if packer_plugins["vim-fugitive"] and packer_plugins["vim-fugitive"].loaded then
---   print("Vim fugitive is loaded")
---   -- other custom logic
--- end
-
--- function _G.ReloadConfig()
---     local hls_status = vim.v.hlsearch
---     for name,_ in pairs(package.loaded) do
---         print(name)
---         if name:match('^cnull') then
---             package.loaded[name] = nil
---         end
---     end
---     dofile(vim.env.MYVIMRC)
---     if hls_status == 0 then
---         vim.opt.hlsearch = false
---     end
--- end
 

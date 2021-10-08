@@ -1,8 +1,26 @@
---vim.api.nvim_set_keymap('x', 'ga', '<Plug>EasyAlign', {noremap = true})
---vim.api.nvim_set_keymap('n', 'ga', '<Plug>EasyAlign', {noremap = true})
+-- vim.api.nvim_set_keymap('x', 'ga', '<Plug>EasyAlign', {noremap = false})
+-- vim.api.nvim_set_keymap('n', 'ga', '<Plug>EasyAlign', {noremap = false})
+vim.cmd[[xmap ga <Plug>(EasyAlign)]]
+vim.cmd[[nmap ga <Plug>(EasyAlign)]]
 
+vim.api.nvim_set_keymap('n', '*', '*N', {noremap = true})
+vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
+vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Q', '<nop>', {noremap = true})
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', {noremap = true})
+
+function _G.ReloadConfig()
+    local hls_status = vim.v.hlsearch
+    for name,_ in pairs(package.loaded) do
+        if name:match('^cnull') then
+            package.loaded[name] = nil
+        end
+    end
+    dofile(vim.env.MYVIMRC)
+    if hls_status == 0 then
+        vim.opt.hlsearch = false
+    end
+end
 
 require("which-key").setup {
     -- your configuration comes here
@@ -61,7 +79,7 @@ wk.register({
 
 wk.register({
     ["<leader>e"] = { name = "+default files" },
-    ["<leader>en"] = {"<cmd>e ~/zimpler-notes.md<cr>", "edit zimpler-notes.md"},
+    ["<leader>en"] = {"<cmd>e ~/dev/notes/zimpler-notes.md<cr>", "edit zimpler-notes.md"},
     ["<leader>ez"] = {"<cmd>e ~/.zshrc<cr>", "edit .zshrc"},
 })
 
@@ -80,3 +98,22 @@ wk.register({
     ["<leader>crn"] = {"<cmd>e ~/.config/nvim/after/plugin/nvim-tree.rc.lua<cr>", "edit nvim-tree.rc.lua"},
 })
 
+
+-- TODO: rewrite this in lua
+vim.cmd[[
+nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
+nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
+nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
+nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+nnoremap <leader>vp :lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>vll :call LspLocationList()<CR>
+]]
+
+vim.api.nvim_set_keymap('n', 'gi', "<Cmd>lua require'telescope.builtin'.lsp_implementations()<cr>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'gh', "<Cmd>lua require'telescope.builtin'.lsp_definitions()<cr>", {noremap = true})
+vim.api.nvim_set_keymap('n', 'gs', "<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", {noremap = true})

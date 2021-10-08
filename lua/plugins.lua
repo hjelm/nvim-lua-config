@@ -16,7 +16,7 @@ return require('packer').startup(function()
     use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
     use 'tpope/vim-eunuch'
-    use 'cohama/lexima.vim'
+    -- use 'cohama/lexima.vim'
 
     use { 'junegunn/fzf', run = 'fzf#install()' }
     use 'junegunn/fzf.vim'
@@ -38,10 +38,10 @@ return require('packer').startup(function()
     use 'sindrets/winshift.nvim'
     use 'nvim-telescope/telescope.nvim'
 
-    use {
-        'noib3/cokeline.nvim',
-        requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-    }
+    -- use {
+    --     'noib3/cokeline.nvim',
+    --     requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+    -- }
 
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/nvim-toggleterm.lua'
@@ -66,5 +66,7 @@ return require('packer').startup(function()
     -- use 'hrsh7th/cmp-vsnip'
     -- use 'hrsh7th/vim-vsnip'
 
+    use "pocco81/autosave.nvim" -- let's try this out
+    use 'foosoft/vim-argwrap' -- wrap function arguments with keypress
 end)
 
