@@ -60,8 +60,8 @@ wk.register({
 })
 
 wk.register({
-    ["b"] = { name = "+buffer" },
-    ["bd"] = {"<cmd>bprevious|bdelete #<cr>", "bdelete"},
+    ["<leader>b"] = { name = "+buffer" },
+    ["<leader>bd"] = {"<cmd>bprevious|bdelete #<cr>", "bdelete"},
 })
 
 

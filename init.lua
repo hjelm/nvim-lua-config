@@ -26,7 +26,7 @@ vim.g.mapleader = ' '
 
 -- Use OSX clipboard to copy and to paste
 vim.cmd[[set clipboard+=unnamedplus]]
-vim.cmd[[colorscheme gruvbox8_hard]]
+vim.cmd[[colorscheme gruvbox]]
 vim.cmd[[syntax on]]
 
 require('plugins')

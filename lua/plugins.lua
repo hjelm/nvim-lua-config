@@ -7,6 +7,7 @@ return require('packer').startup(function()
     use 'marko-cerovac/material.nvim'
     use 'joshdick/onedark.vim'
     use 'lifepillar/vim-gruvbox8'
+    use {'ellisonleao/gruvbox.nvim', requires = {'rktjmp/lush.nvim'}}
 
     -- fundamentals
     use 'tpope/vim-fugitive'
