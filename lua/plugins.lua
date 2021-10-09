@@ -50,6 +50,8 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
 
     use 'neovim/nvim-lspconfig'
+    use 'onsails/lspkind-nvim'
+    use "ray-x/lsp_signature.nvim"
 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -62,8 +64,6 @@ return require('packer').startup(function()
     -- For luasnip user.
     use 'l3mon4d3/luasnip'
     use 'saadparwaiz1/cmp_luasnip'
-
-    use "ray-x/lsp_signature.nvim"
 
     use "pocco81/autosave.nvim" -- let's try this out
     use 'foosoft/vim-argwrap' -- wrap function arguments with keypress
