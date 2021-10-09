@@ -56,8 +56,14 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-cmp'
 
     -- -- For vsnip user.
-    -- use 'hrsh7th/cmp-vsnip'
-    -- use 'hrsh7th/vim-vsnip'
+    --use 'hrsh7th/cmp-vsnip'
+    --use 'hrsh7th/vim-vsnip'
+
+    -- For luasnip user.
+    use 'l3mon4d3/luasnip'
+    use 'saadparwaiz1/cmp_luasnip'
+
+    use "ray-x/lsp_signature.nvim"
 
     use "pocco81/autosave.nvim" -- let's try this out
     use 'foosoft/vim-argwrap' -- wrap function arguments with keypress

@@ -1,10 +1,10 @@
 if packer_plugins["autosave.nvim"] then
    require("autosave").setup(
        {
-           enabled = true,
+           enabled = false,
            execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-           -- events = {"InsertLeave", "TextChanged"},
-           events = {"BufLeave"},
+           events = {"InsertLeave", "TextChanged"},
+           -- events = {"BufLeave"},
            conditions = {
                exists = true,
                filename_is_not = {},

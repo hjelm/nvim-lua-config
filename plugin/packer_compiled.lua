@@ -85,6 +85,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+  },
   ["cokeline.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cokeline.nvim"
@@ -112,6 +116,10 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+  },
+  luasnip = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/luasnip"
   },
   ["material.nvim"] = {
     loaded = true,
