@@ -38,10 +38,9 @@ return require('packer').startup(function()
     use 'sindrets/winshift.nvim'
     use 'nvim-telescope/telescope.nvim'
 
-    -- use {
-    --     'noib3/cokeline.nvim',
-    --     requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
-    -- }
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'noib3/cokeline.nvim'
 
     use 'lewis6991/gitsigns.nvim'
     use 'akinsho/nvim-toggleterm.lua'
@@ -49,12 +48,6 @@ return require('packer').startup(function()
 
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'kyazdani42/nvim-web-devicons',
-        config = function() require'nvim-tree'.setup {} end
-    }
 
     use 'neovim/nvim-lspconfig'
 

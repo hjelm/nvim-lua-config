@@ -1,6 +1,4 @@
-if false then
-
-   -- if not packer_plugins["cokeline"] then return end
+if packer_plugins["cokeline.nvim"] then
 
    -- cokeline configuration:
    local get_hex = require('cokeline/utils').get_hex

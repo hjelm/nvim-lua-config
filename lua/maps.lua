@@ -4,6 +4,7 @@ vim.cmd[[xmap ga <Plug>(EasyAlign)]]
 vim.cmd[[nmap ga <Plug>(EasyAlign)]]
 
 vim.api.nvim_set_keymap('n', '*', '*N', {noremap = true})
+vim.api.nvim_set_keymap('n', '#', '#N', {noremap = true})
 vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
 vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Q', '<nop>', {noremap = true})
