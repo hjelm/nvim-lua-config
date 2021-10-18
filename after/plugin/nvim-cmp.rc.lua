@@ -34,7 +34,10 @@ cmp.setup({
       }),
       ['<Tab>'] = function(fallback)
          if cmp.visible() then
-            cmp.select_next_item()
+            cmp.confirm({
+               behavior = cmp.ConfirmBehavior.Replace,
+               select = true,
+            })
          elseif luasnip.expand_or_jumpable() then
             vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
          else

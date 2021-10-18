@@ -9,6 +9,7 @@ vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
 vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Q', '<nop>', {noremap = true})
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', {noremap = true})
+vim.api.nvim_set_keymap('i', 'Y', 'y$', {noremap = true})
 
 function _G.ReloadConfig()
     local hls_status = vim.v.hlsearch
@@ -67,6 +68,7 @@ wk.register({
 
 wk.register({
     ["<leader>g"] = { name = "+git" },
+    ["<leader>gg"] = {"<cmd>Git<cr>", "git"},
     ["<leader>gb"] = {"<cmd>Git blame<cr>", "git blame"},
     ["<leader>gs"] = {"<cmd>Git status<cr>", "git status"},
     ["<leader>gd"] = {"<cmd>Git diff<cr>", "git diff"},
@@ -100,21 +102,3 @@ wk.register({
 })
 
 
--- TODO: rewrite this in lua
-vim.cmd[[
-nnoremap <leader>vd :lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>vi :lua vim.lsp.buf.implementation()<CR>
-nnoremap <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>vrr :lua vim.lsp.buf.references()<CR>
-nnoremap <leader>vrn :lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>vh :lua vim.lsp.buf.hover()<CR>
-nnoremap <leader>vca :lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-nnoremap <leader>vp :lua vim.lsp.diagnostic.goto_prev()<CR>
-nnoremap <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
-nnoremap <leader>vll :call LspLocationList()<CR>
-]]
-
-vim.api.nvim_set_keymap('n', 'gi', "<Cmd>lua require'telescope.builtin'.lsp_implementations()<cr>", {noremap = true})
-vim.api.nvim_set_keymap('n', 'gh', "<Cmd>lua require'telescope.builtin'.lsp_definitions()<cr>", {noremap = true})
-vim.api.nvim_set_keymap('n', 'gs', "<Cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>", {noremap = true})

@@ -22,12 +22,15 @@ vim.opt.smartcase = true
 vim.opt.mouse = 'a'
 vim.opt.timeoutlen = 500
 vim.opt.linebreak = true
+vim.opt.inccommand='nosplit'
 vim.g.mapleader = ' '
 
 -- Use OSX clipboard to copy and to paste
 vim.cmd[[set clipboard+=unnamedplus]]
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme gruvbox8_hard]]
 vim.cmd[[syntax on]]
+vim.cmd[[set grepprg=rg\ --vimgrep]]
+vim.cmd[[set grepformat=%f:%l:%c:%m]]
 
 require('plugins')
 require('maps')

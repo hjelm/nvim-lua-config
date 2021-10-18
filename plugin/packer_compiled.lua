@@ -113,6 +113,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
@@ -128,6 +132,10 @@ _G.packer_plugins = {
   luasnip = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/luasnip"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
   ["material.nvim"] = {
     loaded = true,

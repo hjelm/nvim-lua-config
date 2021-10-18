@@ -64,5 +64,8 @@ return require('packer').startup(function()
 
    use "pocco81/autosave.nvim" -- let's try this out
    use 'foosoft/vim-argwrap' -- wrap function arguments with keypress
+
+   use 'dyng/ctrlsf.vim'
+   use 'brooth/far.vim'
 end)
 
