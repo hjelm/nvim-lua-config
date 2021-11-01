@@ -10,7 +10,7 @@ if packer_plugins["cokeline.nvim"] then
    end
 
    for i = 1,9 do
-     nmaps(format('<Leader>%s', i), format('<Plug>(cokeline-focus-%s)', i))
+     nmaps(format('<Leader>b%s', i), format('<Plug>(cokeline-focus-%s)', i))
    end
 
    local saved_indicator = {

@@ -3,11 +3,12 @@
 local cmp = require'cmp'
 
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 
 cmp.setup({
    snippet = {
       expand = function(args)
-         require('luasnip').lsp_expand(args.body)
+         luasnip.lsp_expand(args.body)
       end,
    },
    formatting = {
@@ -32,7 +33,7 @@ cmp.setup({
          behavior = cmp.ConfirmBehavior.Replace,
          select = true,
       }),
-      ['<Tab>'] = function(fallback)
+      ['<C-y>'] = function(fallback)
          if cmp.visible() then
             cmp.confirm({
                behavior = cmp.ConfirmBehavior.Replace,
@@ -44,7 +45,7 @@ cmp.setup({
             fallback()
          end
       end,
-      ['<S-Tab>'] = function(fallback)
+      ['<C-Y>'] = function(fallback)
          if cmp.visible() then
            cmp.select_prev_item()
          elseif luasnip.jumpable(-1) then

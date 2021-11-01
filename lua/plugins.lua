@@ -29,8 +29,12 @@ return require('packer').startup(function()
    use 'michaeljsmith/vim-indent-object'
    use 'direnv/direnv.vim'
 
+   use { 'prettier/vim-prettier', run = 'yarn install' }
+
    use 'numtostr/bufonly.nvim'
-   use 'hoob3rt/lualine.nvim'
+   -- use 'hoob3rt/lualine.nvim'
+   -- use 'shadmansaleh/lualine.nvim'
+   use 'hjelm/lualine.nvim'
 
    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
    use 'nvim-treesitter/nvim-treesitter-textobjects'

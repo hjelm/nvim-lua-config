@@ -8,8 +8,12 @@ vim.api.nvim_set_keymap('n', '#', '#N', {noremap = true})
 vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
 vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
 vim.api.nvim_set_keymap('n', 'Q', '<nop>', {noremap = true})
+vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', {noremap = true})
-vim.api.nvim_set_keymap('i', 'Y', 'y$', {noremap = true})
+
+-- search for visualy selected text
+-- vim.api.nvim_set_keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\\\')<cr><cr>', {noremap = true})
+vim.cmd[[vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>]]
 
 function _G.ReloadConfig()
     local hls_status = vim.v.hlsearch
@@ -43,6 +47,7 @@ wk.register({
     ['<leader>fgs'] = {'<cmd>GFiles?<cr>', 'GFiles?'},
     ['<leader>fs'] = {'<cmd>Rg<cr>', 'Rg (ripgrep)'},
     ['<leader>ft'] = {'<cmd>NvimTreeToggle<cr>', 'Nvim-Tree (toggle)'},
+    ['<leader>fg'] = {'<cmd>NvimTreeFindFile<cr>', 'Nvim-Tree (GoToFile)'},
 })
 
 wk.register({
@@ -89,6 +94,15 @@ wk.register({
 wk.register({
     ["<leader>w"] = { name = "+window" },
     ["<leader>ws"] = {"<cmd>WinShift<cr>", "WinShift"},
+    ["<leader>w1"] = {"<cmd>1wincmd w<cr>", "win 1"},
+    ["<leader>w2"] = {"<cmd>2wincmd w<cr>", "win 2"},
+    ["<leader>w3"] = {"<cmd>3wincmd w<cr>", "win 3"},
+    ["<leader>w4"] = {"<cmd>4wincmd w<cr>", "win 4"},
+    ["<leader>w5"] = {"<cmd>5wincmd w<cr>", "win 5"},
+    ["<leader>w6"] = {"<cmd>6wincmd w<cr>", "win 6"},
+    ["<leader>w7"] = {"<cmd>7wincmd w<cr>", "win 7"},
+    ["<leader>w8"] = {"<cmd>8wincmd w<cr>", "win 8"},
+    ["<leader>w9"] = {"<cmd>9wincmd w<cr>", "win 9"},
 })
 
 wk.register({

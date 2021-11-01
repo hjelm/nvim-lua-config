@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cokeline.nvim"
   },
+  ["ctrlsf.vim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/ctrlsf.vim"
+  },
   ["direnv.vim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/direnv.vim"
@@ -100,6 +104,10 @@ _G.packer_plugins = {
   ["emmet-vim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/emmet-vim"
+  },
+  ["far.vim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/far.vim"
   },
   fzf = {
     loaded = true,
