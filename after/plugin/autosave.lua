@@ -1,4 +1,4 @@
-if packer_plugins["autosave.nvim"] then
+if packer_plugins["autosave.nvim"] and packer_plugins["autosave.nvim"].loaded then
    require("autosave").setup(
        {
            enabled = false,

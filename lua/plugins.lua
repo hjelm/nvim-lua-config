@@ -58,18 +58,21 @@ return require('packer').startup(function()
    use 'onsails/lspkind-nvim'
    use "ray-x/lsp_signature.nvim"
 
+   use 'hrsh7th/nvim-cmp'
    use 'hrsh7th/cmp-nvim-lsp'
    use 'hrsh7th/cmp-buffer'
-   use 'hrsh7th/nvim-cmp'
 
    -- For luasnip user.
    use 'l3mon4d3/luasnip'
    use 'saadparwaiz1/cmp_luasnip'
 
-   use "pocco81/autosave.nvim" -- let's try this out
+   -- use "pocco81/autosave.nvim" -- let's try this out
    use 'foosoft/vim-argwrap' -- wrap function arguments with keypress
 
    use 'dyng/ctrlsf.vim'
    use 'brooth/far.vim'
+
+   use 'theprimeagen/harpoon'
+   use 'kosayoda/nvim-lightbulb'
 end)
 

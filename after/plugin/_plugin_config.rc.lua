@@ -10,12 +10,11 @@ require('gitsigns').setup()
 
 
 require('telescope').setup{
---   defaults = {
---     mappings = {
---       n = {
---         ["q"] = actions.close
---       },
---     },
---   }
+   defaults = {
+      layout_strategy = 'vertical',
+      layout_config = {
+         vertical = { width = 0.95 }
+      },
+   }
 }
 

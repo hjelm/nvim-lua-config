@@ -28,6 +28,7 @@ vim.opt.mouse = 'a'
 vim.opt.timeoutlen = 500
 vim.opt.linebreak = true
 vim.opt.inccommand = 'nosplit'
+vim.opt.wrapscan = false
 vim.g.mapleader = ' '
 
 -- Use OSX clipboard to copy and to paste

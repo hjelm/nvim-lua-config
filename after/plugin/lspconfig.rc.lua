@@ -16,25 +16,34 @@ local on_attach = function(client, bufnr)
    local opts = { noremap=true, silent=true }
 
    -- See `:help vim.lsp.*` for documentation on any of the below functions
+   -- buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+   buf_set_keymap('n', 'gd', "<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>", opts)
    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
    buf_set_keymap('n', '<leader>lI', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
    buf_set_keymap('n', '<leader>li', "<cmd>lua require'telescope.builtin'.lsp_implementations()<cr>", opts)
-   buf_set_keymap('n', '<leader>ld', "<cmd>lua require'telescope.builtin'.lsp_definitions()<cr>", opts)
    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
    buf_set_keymap('n', '<leader>lwa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', opts)
    buf_set_keymap('n', '<leader>lwr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', opts)
    buf_set_keymap('n', '<leader>lwl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', opts)
    buf_set_keymap('n', '<leader>lt', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-   buf_set_keymap('n', '<leader>lc', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-   buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+   buf_set_keymap('n', '<leader>lC', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+   buf_set_keymap('n', '<leader>ldd', "<cmd>lua require'telescope.builtin'.lsp_document_diagnostics()<cr>", opts)
+   buf_set_keymap('n', '<leader>lds', "<cmd>lua require'telescope.builtin'.lsp_document_symbols()<cr>", opts)
+   buf_set_keymap('n', '<leader>lwd', "<cmd>lua require'telescope.builtin'.lsp_workspace_diagnostics()<cr>", opts)
+   buf_set_keymap('n', '<leader>lws', "<cmd>lua require'telescope.builtin'.lsp_workspace_symbols()<cr>", opts)
+   buf_set_keymap('n', '<leader>ldws', "<cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols()<cr>", opts)
+   buf_set_keymap('n', '<leader>lc', "<cmd>lua require'telescope.builtin'.lsp_code_actions()<cr>", opts)
+   buf_set_keymap('n', '<leader>lr', "<cmd>lua require'telescope.builtin'.lsp_references()<cr>", opts)
+   -- buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
    buf_set_keymap('n', '<leader>lR', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
    buf_set_keymap('n', '<leader>le', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
    buf_set_keymap('n', '<leader>lp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
    buf_set_keymap('n', '<leader>ln', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
    buf_set_keymap('n', '<leader>lq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
    buf_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
+
+   vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
 
    require "lsp_signature".on_attach()
 end
