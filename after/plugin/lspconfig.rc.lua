@@ -2,6 +2,8 @@
 -- LSP CONFIG
 
 local nvim_lsp = require('lspconfig')
+local util = require('lspconfig.util')
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -37,7 +39,7 @@ local on_attach = function(client, bufnr)
    buf_set_keymap('n', '<leader>lr', "<cmd>lua require'telescope.builtin'.lsp_references()<cr>", opts)
    -- buf_set_keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
    buf_set_keymap('n', '<leader>lR', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-   buf_set_keymap('n', '<leader>le', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
+   buf_set_keymap('n', '<leader>le', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
    buf_set_keymap('n', '<leader>lp', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
    buf_set_keymap('n', '<leader>ln', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
    buf_set_keymap('n', '<leader>lq', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
@@ -71,28 +73,35 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-nvim_lsp.sumneko_lua.setup {
-    cmd = {sumneko_binary_path};
-    settings = {
-        Lua = {
-        runtime = {
-            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-            version = 'LuaJIT',
-            -- Setup your lua path
-            path = runtime_path,
-        },
-        diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
-        },
-        workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = vim.api.nvim_get_runtime_file("", true),
-        },
-        -- Do not send telemetry data containing a randomized but unique identifier
-        telemetry = {
-            enable = false,
-        },
-        },
-    },
-}
+-- nvim_lsp.sumneko_lua.setup {
+--     cmd = {sumneko_binary_path};
+--     settings = {
+--         Lua = {
+--         runtime = {
+--             -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--             version = 'LuaJIT',
+--             -- Setup your lua path
+--             path = runtime_path,
+--         },
+--         diagnostics = {
+--             -- Get the language server to recognize the `vim` global
+--             globals = {'vim'},
+--         },
+--         workspace = {
+--             -- Make the server aware of Neovim runtime files
+--             library = vim.api.nvim_get_runtime_file("", true),
+--         },
+--         -- Do not send telemetry data containing a randomized but unique identifier
+--         telemetry = {
+--             enable = false,
+--         },
+--         },
+--     },
+-- }
+
+-- nvim_lsp.ltex.setup{
+--    cmd = { "ltex-ls" },
+--    filetypes = { "bib", "markdown", "org", "plaintex", "rst", "rnoweb", "tex" },
+--    root_dir = util.find_git_ancestor,
+--    on_attach = on_attach,
+-- }

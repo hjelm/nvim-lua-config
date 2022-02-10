@@ -17,7 +17,7 @@ if (status) then
         lualine_a = {{window, padding = {left = 1, right = 0}}, 'mode'},
         lualine_b = {'branch'},
         lualine_c = {{'filename', path=1}, 'diff'},
-        lualine_x = {{'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
+        lualine_x = {{'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
           'encoding',
           'filetype'
         },

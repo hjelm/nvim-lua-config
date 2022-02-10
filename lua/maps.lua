@@ -7,13 +7,51 @@ vim.api.nvim_set_keymap('n', '*', '*N', {noremap = true})
 vim.api.nvim_set_keymap('n', '#', '#N', {noremap = true})
 vim.api.nvim_set_keymap('n', 'j', 'gj', {noremap = true})
 vim.api.nvim_set_keymap('n', 'k', 'gk', {noremap = true})
-vim.api.nvim_set_keymap('n', 'Q', '<nop>', {noremap = true})
-vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true})
+vim.api.nvim_set_keymap('n', 'Q', '@q', {noremap = true})
 vim.api.nvim_set_keymap('i', 'jk', '<esc>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<cr>', '"', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>ss', ':s///g<left><left>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-s>', ':w<cr>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<c-s>', '<esc>:w<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>x', ':bprevious|bdelete #<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<leader>X', ':bd<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-n>', ':cnext<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-p>', ':cprevious<cr>', {noremap = true})
+
+-- use the same emacs (shell) keybindings for cmdline
+vim.api.nvim_set_keymap('c', '<c-a>', '<home>', {noremap = true})
+vim.api.nvim_set_keymap('c', '<c-f>', '<right>', {noremap = true})
+vim.api.nvim_set_keymap('c', '<c-b>', '<left>', {noremap = true})
+vim.api.nvim_set_keymap('c', '<esc>b', '<s-left>', {noremap = true})
+vim.api.nvim_set_keymap('c', '<esc>f', '<s-right>', {noremap = true})
+
+	-- :cnoremap <Esc>b <S-Left>
+	-- :cnoremap <Esc>f <S-Right>
 
 -- search for visualy selected text
 -- vim.api.nvim_set_keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\\\')<cr><cr>', {noremap = true})
 vim.cmd[[vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>]]
+
+local function qf_list_open()
+   local qf_open = false
+   for winnr in ipairs(vim.api.nvim_list_wins()) do
+      if vim.fn.win_gettype(winnr) == 'quickfix' then
+         qf_open = true
+      end
+   end
+   return qf_open
+end
+
+function _G.toggle_qf()
+   if qf_list_open() then
+      vim.cmd[[:cclose]]
+   else
+      vim.cmd[[:copen]]
+   end
+end
+
+vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua toggle_qf()<cr>', {noremap = true})
+-- vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>lua <cr>', {noremap = true})
 
 function _G.ReloadConfig()
     local hls_status = vim.v.hlsearch
@@ -37,6 +75,23 @@ require("which-key").setup {
 local wk = require("which-key")
 
 wk.register({
+    ["a"] = { name = "+text operations" },
+    ['<leader>aw'] = {'<cmd>ArgWrap<cr>', 'ArgWrap'},
+})
+
+-- wk.register({
+--     ["q"] = { name = "+quickfix list" },
+--     ['<leader>qq'] = {'<cmd>copen<cr>', 'open quickfix list'},
+--     ['<leader>qc'] = {'<cmd>cclose<cr>', 'close quickfix list'},
+-- })
+
+-- wk.register({
+--     ["l"] = { name = "+location list" },
+--     ['<leader>ll'] = {'<cmd>lopen<cr>', 'open location list'},
+--     ['<leader>lc'] = {'<cmd>lclose<cr>', 'close location list'},
+-- })
+
+wk.register({
     ["f"] = { name = "+files" },
     -- ['<leader>ff'] = {'<cmd>Files<cr>', 'Files'},
     -- ['<leader>fb'] = {'<cmd>Buffers<cr>', 'Buffers'},
@@ -55,7 +110,32 @@ wk.register({
     ["<leader>b"] = { name = "+buffer" },
     ['<leader>bb'] = {'<cmd>Telescope buffers<cr>', 'Buffers'},
     ["<leader>bd"] = {"<cmd>bprevious|bdelete #<cr>", "bdelete"},
+    ["<leader>bm"] = {"<cmd>Bdelete menu<cr>", "Bdelete menu"},
+    ["<leader>bp"] = {"<cmd>BufferLinePick<cr>", "buf pick"},
+    ["<leader>b1"] = {"<cmd>BufferLineGoToBuffer 1<cr>", "buf 1"},
+    ["<leader>b2"] = {"<cmd>BufferLineGoToBuffer 2<cr>", "buf 2"},
+    ["<leader>b3"] = {"<cmd>BufferLineGoToBuffer 3<cr>", "buf 3"},
+    ["<leader>b4"] = {"<cmd>BufferLineGoToBuffer 4<cr>", "buf 4"},
+    ["<leader>b5"] = {"<cmd>BufferLineGoToBuffer 5<cr>", "buf 5"},
+    ["<leader>b6"] = {"<cmd>BufferLineGoToBuffer 6<cr>", "buf 6"},
+    ["<leader>b7"] = {"<cmd>BufferLineGoToBuffer 7<cr>", "buf 7"},
+    ["<leader>b8"] = {"<cmd>BufferLineGoToBuffer 8<cr>", "buf 8"},
+    ["<leader>b9"] = {"<cmd>BufferLineGoToBuffer 9<cr>", "buf 9"},
 })
+
+wk.register({
+    ["<leader>d"] = { name = "+dap debugging" },
+    ["<leader>db"] = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>", "toggle breakpoint"},
+    ["<leader>dc"] = {"<cmd>lua require'dap'.continue()<cr>", "continue"},
+    ["<leader>dr"] = {"<cmd>lua require'dap'.repl.open()<cr>", "repl open"},
+    ["<leader>dl"] = {"<cmd>lua require'dap'.run_last()<cr>", "run last"},
+    ["<leader>ds"] = {"<cmd>lua require'dap'.step_over()<cr>", "step over"},
+    ["<leader>di"] = {"<cmd>lua require'dap'.step_into()<cr>", "step into"},
+    ["<leader>do"] = {"<cmd>lua require'dap'.step_out()<cr>", "step out"},
+})
+
+ -- nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+ -- nnoremap <silent> <leader>lp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 
 
 wk.register({
@@ -71,9 +151,10 @@ wk.register({
     ["<leader>gD"] = {"<cmd>Git diff --cached<cr>", "git diff --cached"},
     ["<leader>gv"] = {"<cmd>Gvdiffsplit<cr>", "git diff vertical"},
     ["<leader>ga"] = {"<cmd>Git add %:p<cr>", "git add current file"},
-    ["<leader>gl"] = {"<cmd>Git pull<cr>", "git pull"},
-    ["<leader>gp"] = {"<cmd>Git push<cr>", "git push"},
+    ["<leader>gpl"] = {"<cmd>Git pull<cr>", "git pull"},
+    ["<leader>gps"] = {"<cmd>Git push<cr>", "git push"},
     ["<leader>gr"] = {"<cmd>Git branch -v<cr>", "git branch -v"},
+    ["<leader>glg"] = {"<cmd>Git log<cr>", "git log"},
 })
 
 wk.register({

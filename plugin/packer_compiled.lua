@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s))
+  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -69,10 +69,20 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["bufonly.nvim"] = {
+  ["bufferline.nvim"] = {
     loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/bufonly.nvim",
-    url = "https://github.com/numtostr/bufonly.nvim"
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  ["clever-f.vim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/clever-f.vim",
+    url = "https://github.com/rhysd/clever-f.vim"
+  },
+  ["close-buffers.vim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/close-buffers.vim",
+    url = "https://github.com/asheq/close-buffers.vim"
   },
   ["cmp-buffer"] = {
     loaded = true,
@@ -89,10 +99,10 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["cokeline.nvim"] = {
+  ["comment.nvim"] = {
     loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/cokeline.nvim",
-    url = "https://github.com/noib3/cokeline.nvim"
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/comment.nvim",
+    url = "https://github.com/numToStr/comment.nvim"
   },
   ["ctrlsf.vim"] = {
     loaded = true,
@@ -104,10 +114,10 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/direnv.vim",
     url = "https://github.com/direnv/direnv.vim"
   },
-  ["emmet-vim"] = {
+  ["dressing.nvim"] = {
     loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["far.vim"] = {
     loaded = true,
@@ -139,6 +149,11 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
@@ -152,7 +167,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/hjelm/lualine.nvim"
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   luasnip = {
     loaded = true,
@@ -179,6 +194,21 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/thehamsta/nvim-dap-virtual-text"
+  },
   ["nvim-lightbulb"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
@@ -188,6 +218,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-toggleterm.lua"] = {
     loaded = true,
@@ -214,6 +249,11 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["nvim-ts-context-commentstring"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
+    url = "https://github.com/joosepalviste/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -239,6 +279,11 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["quick-scope"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/quick-scope",
+    url = "https://github.com/unblevable/quick-scope"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -253,11 +298,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-argwrap",
     url = "https://github.com/foosoft/vim-argwrap"
-  },
-  ["vim-commentary"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-commentary",
-    url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-easy-align"] = {
     loaded = true,
@@ -294,6 +334,11 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
   },
+  ["vim-qfedit"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-qfedit",
+    url = "https://github.com/itchyny/vim-qfedit"
+  },
   ["vim-repeat"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-repeat",
@@ -313,6 +358,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  ["vim-textobj-user"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
+    url = "https://github.com/kana/vim-textobj-user"
+  },
+  ["vim-textobj-variable-segment"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-textobj-variable-segment",
+    url = "https://github.com/julian/vim-textobj-variable-segment"
   },
   ["vim-unimpaired"] = {
     loaded = true,

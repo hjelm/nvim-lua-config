@@ -5,7 +5,7 @@ vim.bo.autoindent = true
 vim.opt.formatoptions = 'croql'
 vim.wo.wrap = true
 vim.o.smarttab = true
-vim.bo.commentstring = '{/*\\ %s\\ */}'
+-- vim.bo.commentstring = '{/*\\ %s\\ */}'
 -- vim.cmd[[
 -- "set commentstring={/*\ %s\ */}
 -- if exists('g:context#commentstring#table')

@@ -82,7 +82,6 @@ if packer_plugins["cokeline.nvim"] then
 
 
    require('cokeline').setup({
-     hide_when_one_buffer = true,
 
      default_hl = {
        focused = {
