@@ -12,12 +12,14 @@ cmp.setup({
       end,
    },
    formatting = {
-    format = lspkind.cmp_format({with_text = false, maxwidth = 50, menu = ({
-      buffer = "[Buffer]",
-      nvim_lsp = "[LSP]",
-      luasnip = "[LuaSnip]",
-      nvim_lua = "[Lua]",
-      latex_symbols = "[Latex]",
+    format = lspkind.cmp_format({
+       maxwidth = 50,
+       menu = ({
+       buffer = "[Buffer]",
+       nvim_lsp = "[LSP]",
+       luasnip = "[LuaSnip]",
+       nvim_lua = "[Lua]",
+       latex_symbols = "[Latex]",
     })})
    },
    mapping = {

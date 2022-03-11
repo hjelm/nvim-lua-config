@@ -6,8 +6,6 @@ vim.cmd[[
  let g:far#source='rgnvim'
 ]]
 
-require('gitsigns').setup()
-
 
 require('telescope').setup{
    defaults = {

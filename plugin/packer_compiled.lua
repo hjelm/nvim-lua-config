@@ -284,6 +284,11 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/quick-scope",
     url = "https://github.com/unblevable/quick-scope"
   },
+  ["quickfix-reflector.vim"] = {
+    loaded = true,
+    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/quickfix-reflector.vim",
+    url = "https://github.com/stefandtw/quickfix-reflector.vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -333,11 +338,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-prettier",
     url = "https://github.com/prettier/vim-prettier"
-  },
-  ["vim-qfedit"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-qfedit",
-    url = "https://github.com/itchyny/vim-qfedit"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -392,5 +392,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

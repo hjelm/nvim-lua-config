@@ -1,4 +1,11 @@
-return require('packer').startup(function(use)
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
+
+return require('packer').startup(function()
    use 'wbthomason/packer.nvim'
 
    use 'lewis6991/impatient.nvim'
@@ -49,6 +56,9 @@ return require('packer').startup(function(use)
    use 'nvim-treesitter/nvim-treesitter-textobjects'
    use 'nvim-treesitter/nvim-treesitter-refactor'
 
+   use 'nvim-lua/popup.nvim'
+   use 'nvim-lua/plenary.nvim'
+
    use 'sindrets/winshift.nvim'
    use 'nvim-telescope/telescope.nvim'
 
@@ -57,12 +67,10 @@ return require('packer').startup(function(use)
    --use 'noib3/cokeline.nvim'
    use 'akinsho/bufferline.nvim'
 
-   use 'lewis6991/gitsigns.nvim'
+   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, }
+
    use 'akinsho/nvim-toggleterm.lua'
    use 'folke/which-key.nvim'
-
-   use 'nvim-lua/popup.nvim'
-   use 'nvim-lua/plenary.nvim'
 
    use 'neovim/nvim-lspconfig'
    use 'onsails/lspkind-nvim'
@@ -86,7 +94,8 @@ return require('packer').startup(function(use)
 
    -- use 'romainl/vim-qf'
    -- use 'kevinhwang91/nvim-bqf'
-   use 'itchyny/vim-qfedit'
+   -- use 'itchyny/vim-qfedit'
+   use 'stefandtw/quickfix-reflector.vim'
 
    -- use 'gabrielpoca/replacer.nvim'
 
@@ -110,5 +119,8 @@ return require('packer').startup(function(use)
    use 'stevearc/dressing.nvim'
    use 'rcarriga/nvim-notify'
 
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
 
