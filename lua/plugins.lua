@@ -109,6 +109,14 @@ return require('packer').startup(function()
    use 'hrsh7th/cmp-nvim-lsp'
    use 'hrsh7th/cmp-buffer'
 
+   use {
+      'jose-elias-alvarez/null-ls.nvim',
+   }
+   use {
+      'muniftanjim/prettier.nvim',
+      config="require('cfg/prettier')"
+   }
+
    -- For luasnip user.
    use 'l3mon4d3/luasnip'
    use 'saadparwaiz1/cmp_luasnip'
