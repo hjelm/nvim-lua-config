@@ -70,6 +70,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["bufferline.nvim"] = {
+    config = { "require('cfg/bufferline')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -100,9 +101,10 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["comment.nvim"] = {
+    config = { "require('cfg/comment')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/comment.nvim",
-    url = "https://github.com/numToStr/comment.nvim"
+    url = "https://github.com/numtostr/comment.nvim"
   },
   ["ctrlsf.vim"] = {
     loaded = true,
@@ -120,6 +122,7 @@ _G.packer_plugins = {
     url = "https://github.com/stevearc/dressing.nvim"
   },
   ["far.vim"] = {
+    config = { "require('cfg/far')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/far.vim",
     url = "https://github.com/brooth/far.vim"
@@ -129,12 +132,8 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
-  ["fzf.vim"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/fzf.vim",
-    url = "https://github.com/junegunn/fzf.vim"
-  },
   ["gitsigns.nvim"] = {
+    config = { "require('cfg/gitsigns')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
@@ -149,11 +148,6 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
-  ["impatient.nvim"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/impatient.nvim",
-    url = "https://github.com/lewis6991/impatient.nvim"
-  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
@@ -165,6 +159,7 @@ _G.packer_plugins = {
     url = "https://github.com/onsails/lspkind-nvim"
   },
   ["lualine.nvim"] = {
+    config = { "require('cfg/lualine')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -179,22 +174,14 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
-  ["material.nvim"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/material.nvim",
-    url = "https://github.com/marko-cerovac/material.nvim"
-  },
-  ["nord.nvim"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nord.nvim",
-    url = "https://github.com/shaunsingh/nord.nvim"
-  },
   ["nvim-cmp"] = {
+    config = { "require('cfg/cmp')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-dap"] = {
+    config = { "require('cfg/dap')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
@@ -215,11 +202,13 @@ _G.packer_plugins = {
     url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
+    config = { "require('cfg/lspconfig')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-notify"] = {
+    config = { "require('cfg/nvim-notify')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
@@ -230,11 +219,13 @@ _G.packer_plugins = {
     url = "https://github.com/akinsho/nvim-toggleterm.lua"
   },
   ["nvim-tree.lua"] = {
+    config = { "require('cfg/nvim-tree')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
+    config = { "require('cfg/treesitter')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -258,11 +249,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
-  },
-  ["onedark.vim"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/onedark.vim",
-    url = "https://github.com/joshdick/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -290,14 +276,10 @@ _G.packer_plugins = {
     url = "https://github.com/stefandtw/quickfix-reflector.vim"
   },
   ["telescope.nvim"] = {
+    config = { "require('cfg/telescope')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-argwrap"] = {
     loaded = true,
@@ -324,20 +306,10 @@ _G.packer_plugins = {
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
-  ["vim-gruvbox8"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-gruvbox8",
-    url = "https://github.com/lifepillar/vim-gruvbox8"
-  },
   ["vim-indent-object"] = {
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-indent-object",
     url = "https://github.com/michaeljsmith/vim-indent-object"
-  },
-  ["vim-prettier"] = {
-    loaded = true,
-    path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-prettier",
-    url = "https://github.com/prettier/vim-prettier"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -375,6 +347,7 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-unimpaired"
   },
   ["which-key.nvim"] = {
+    config = { "require('cfg/wk')" },
     loaded = true,
     path = "/Users/daniel/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
@@ -387,6 +360,58 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: far.vim
+time([[Config for far.vim]], true)
+require('cfg/far')
+time([[Config for far.vim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require('cfg/lualine')
+time([[Config for lualine.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('cfg/nvim-tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: comment.nvim
+time([[Config for comment.nvim]], true)
+require('cfg/comment')
+time([[Config for comment.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('cfg/treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+require('cfg/gitsigns')
+time([[Config for gitsigns.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require('cfg/bufferline')
+time([[Config for bufferline.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('cfg/wk')
+time([[Config for which-key.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('cfg/cmp')
+time([[Config for nvim-cmp]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('cfg/telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-notify
+time([[Config for nvim-notify]], true)
+require('cfg/nvim-notify')
+time([[Config for nvim-notify]], false)
+-- Config for: nvim-dap
+time([[Config for nvim-dap]], true)
+require('cfg/dap')
+time([[Config for nvim-dap]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('cfg/lspconfig')
+time([[Config for nvim-lspconfig]], false)
 if should_profile then save_profiles() end
 
 end)

@@ -1,5 +1,4 @@
-require('Comment').setup(
-{
+require('Comment').setup({
     ---Add a space b/w comment and the line
     ---@type boolean
     padding = true,

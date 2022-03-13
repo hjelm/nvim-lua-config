@@ -1,5 +1,3 @@
-require('impatient')
-
 -- :h lua-vim-options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -30,17 +28,17 @@ vim.opt.linebreak = true
 vim.opt.wrapscan = false
 vim.g.mapleader = ' '
 
+require('plugins')
+
 vim.cmd[[
 " Use OSX clipboard to copy and to paste
 set clipboard+=unnamedplus
-colorscheme gruvbox
 hi Normal guifg=#ebdbb2 guibg=#1d2021 gui=NONE cterm=NONE
 syntax on
+silent! colorscheme gruvbox
 set grepprg=rg\ --vimgrep
 set grepformat=%f:%l:%c:%m
 command! LogDate put =strftime('# %Y-%m-%d %A')
 ]]
 
-require('plugins')
 require('maps')
-
