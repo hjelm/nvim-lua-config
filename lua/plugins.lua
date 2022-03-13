@@ -110,7 +110,7 @@ return require('packer').startup(function()
    use 'hrsh7th/cmp-buffer'
 
    use {
-      'jose-elias-alvarez/null-ls.nvim',
+      'jose-elias-alvarez/null-ls.nvim'
    }
    use {
       'muniftanjim/prettier.nvim',
