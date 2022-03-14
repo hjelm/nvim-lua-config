@@ -34,7 +34,7 @@ return require('packer').startup(function()
 
    use {
       'junegunn/fzf',
-      require='junegunn/fzf.vim',
+      requires='junegunn/fzf.vim',
       run='fzf#install()'
    }
 

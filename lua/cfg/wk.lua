@@ -72,15 +72,15 @@ wk.register({
 
 wk.register({
     ["<leader>g"] = { name = "+git" },
-    ["<leader>gg"] = {"<cmd>Git<cr>", "git"},
+    ["<leader>gg"] = {"<cmd>tab Git<cr>", "git"},
     ["<leader>gb"] = {"<cmd>Git blame<cr>", "git blame"},
     -- ["<leader>gs"] = {"<cmd>Git status<cr>", "git status"},
     ["<leader>gss"] = {"<cmd>lua require'telescope.builtin'.git_status()<cr>", "git status"},
     ["<leader>gsd"] = {"<cmd>lua require'telescope.builtin'.git_stash_diff()<cr>", "git stash diff"},
     ["<leader>gsl"] = {"<cmd>lua require'telescope.builtin'.git_stash()<cr>", "git stash list"},
     ["<leader>gc"] = {"<cmd>lua require'telescope.builtin'.git_commits()<cr>", "git commits"},
-    ["<leader>gd"] = {"<cmd>Git diff<cr>", "git diff"},
-    ["<leader>gD"] = {"<cmd>Git diff --cached<cr>", "git diff --cached"},
+    ["<leader>gd"] = {"<cmd>tab Git diff<cr>", "git diff"},
+    ["<leader>gD"] = {"<cmd>tab Git diff --cached<cr>", "git diff --cached"},
     ["<leader>gv"] = {"<cmd>Gvdiffsplit<cr>", "git diff vertical"},
     ["<leader>ga"] = {"<cmd>Git add %:p<cr>", "git add current file"},
     ["<leader>gpl"] = {"<cmd>Git pull<cr>", "git pull"},
