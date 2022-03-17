@@ -108,7 +108,14 @@ return require('packer').startup(function()
    }
    use 'hrsh7th/cmp-nvim-lsp'
    use 'hrsh7th/cmp-buffer'
-
+   use 'hrsh7th/cmp-path'
+   use 'hrsh7th/cmp-cmdline'
+   use 'saadparwaiz1/cmp_luasnip'
+   use {
+      'l3mon4d3/luasnip',
+      -- config="require('cfg/luasnip')"
+   }
+   use 'rafamadriz/friendly-snippets'
    use {
       'jose-elias-alvarez/null-ls.nvim'
    }
@@ -116,10 +123,6 @@ return require('packer').startup(function()
       'muniftanjim/prettier.nvim',
       config="require('cfg/prettier')"
    }
-
-   -- For luasnip user.
-   use 'l3mon4d3/luasnip'
-   use 'saadparwaiz1/cmp_luasnip'
 
    use 'foosoft/vim-argwrap' -- wrap function arguments with keypress
 
