@@ -391,42 +391,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-require('cfg/nvim-tree')
-time([[Config for nvim-tree.lua]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('cfg/treesitter')
-time([[Config for nvim-treesitter]], false)
--- Config for: prettier.nvim
-time([[Config for prettier.nvim]], true)
-require('cfg/prettier')
-time([[Config for prettier.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require('cfg/telescope')
-time([[Config for telescope.nvim]], false)
--- Config for: far.vim
-time([[Config for far.vim]], true)
-require('cfg/far')
-time([[Config for far.vim]], false)
--- Config for: nvim-lspconfig
-time([[Config for nvim-lspconfig]], true)
-require('cfg/lspconfig')
-time([[Config for nvim-lspconfig]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+require('cfg/wk')
+time([[Config for which-key.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('cfg/cmp')
 time([[Config for nvim-cmp]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require('cfg/bufferline')
-time([[Config for bufferline.nvim]], false)
--- Config for: comment.nvim
-time([[Config for comment.nvim]], true)
-require('cfg/comment')
-time([[Config for comment.nvim]], false)
+-- Config for: nvim-notify
+time([[Config for nvim-notify]], true)
+require('cfg/nvim-notify')
+time([[Config for nvim-notify]], false)
 -- Config for: nvim-dap
 time([[Config for nvim-dap]], true)
 require('cfg/dap')
@@ -439,14 +415,38 @@ time([[Config for lualine.nvim]], false)
 time([[Config for gitsigns.nvim]], true)
 require('cfg/gitsigns')
 time([[Config for gitsigns.nvim]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-require('cfg/wk')
-time([[Config for which-key.nvim]], false)
--- Config for: nvim-notify
-time([[Config for nvim-notify]], true)
-require('cfg/nvim-notify')
-time([[Config for nvim-notify]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require('cfg/telescope')
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+require('cfg/nvim-tree')
+time([[Config for nvim-tree.lua]], false)
+-- Config for: far.vim
+time([[Config for far.vim]], true)
+require('cfg/far')
+time([[Config for far.vim]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+require('cfg/lspconfig')
+time([[Config for nvim-lspconfig]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('cfg/treesitter')
+time([[Config for nvim-treesitter]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require('cfg/bufferline')
+time([[Config for bufferline.nvim]], false)
+-- Config for: comment.nvim
+time([[Config for comment.nvim]], true)
+require('cfg/comment')
+time([[Config for comment.nvim]], false)
+-- Config for: prettier.nvim
+time([[Config for prettier.nvim]], true)
+require('cfg/prettier')
+time([[Config for prettier.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

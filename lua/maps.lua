@@ -7,7 +7,6 @@ vim.keymap.set('n', '*', '*N')
 vim.keymap.set('n', '#', '#N')
 vim.keymap.set('n', 'j', 'gj')
 vim.keymap.set('n', 'k', 'gk')
-vim.keymap.set('n', 'Q', '@q')
 vim.keymap.set('i', 'jk', '<esc>')
 vim.keymap.set('n', '<cr>', '"')
 vim.keymap.set('n', '<leader>ss', ':s///g<left><left>')
@@ -51,17 +50,4 @@ function toggle_qf()
 end
 
 vim.keymap.set('n', '<leader>q', toggle_qf)
-
-function _G.ReloadConfig()
-    local hls_status = vim.v.hlsearch
-    for name,_ in pairs(package.loaded) do
-        if name:match('^cnull') then
-            package.loaded[name] = nil
-        end
-    end
-    dofile(vim.env.MYVIMRC)
-    if hls_status == 0 then
-        vim.opt.hlsearch = false
-    end
-end
 

@@ -142,9 +142,10 @@ wk.register({
 
 wk.register({
     ["<leader>c"] = { name = "+conf" },
-    ["<leader>cn"] = {"<cmd>FZF ~/.config/nvim/<cr>", "edit neovim confs"},
-    ["<leader>cc"] = {"<cmd>lua ReloadConfig()<cr>", "reload conf"},
+    -- ["<leader>cn"] = {"<cmd>FZF ~/.config/nvim/<cr>", "edit neovim confs"},
+    ["<leader>cn"] = {"<cmd>Telescope find_files find_command=rg,--files,/Users/daniel/.config/nvim <cr>", "edit neovim confs"},
     ["<leader>ci"] = {"<cmd>e $MYVIMRC<cr>", "edit config"},
+    ["<leader>cs"] = {"<cmd>e ~/.config/nvim/lua/settings.lua<cr>", "edit maps.lua"},
     ["<leader>cm"] = {"<cmd>e ~/.config/nvim/lua/maps.lua<cr>", "edit maps.lua"},
     ["<leader>cp"] = {"<cmd>e ~/.config/nvim/lua/plugins.lua<cr>", "edit plugins.lua"},
     ["<leader>crn"] = {"<cmd>e ~/.config/nvim/after/plugin/nvim-tree.rc.lua<cr>", "edit nvim-tree.rc.lua"},

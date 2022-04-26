@@ -27,15 +27,14 @@ vim.opt.timeoutlen = 500
 vim.opt.linebreak = true
 vim.opt.wrapscan = false
 vim.g.mapleader = ' '
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.grepprg = 'rg --vimgrep'
+vim.opt.grepformat = '%f:%l:%c:%m'
 
-vim.cmd[[
-" Use OSX clipboard to copy and to paste
-set clipboard+=unnamedplus
-hi Normal guifg=#ebdbb2 guibg=#1d2021 gui=NONE cterm=NONE
-syntax on
-silent! colorscheme gruvbox
-set grepprg=rg\ --vimgrep
-set grepformat=%f:%l:%c:%m
-command! LogDate put =strftime('# %Y-%m-%d %A')
-]]
+
+vim.cmd[[ silent! colorscheme gruvbox ]]
+
+vim.api.nvim_create_user_command("LogDate", function()
+    vim.api.nvim_command("put =strftime('# %Y-%m-%d %A')")
+end, {})
 
