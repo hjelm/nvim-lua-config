@@ -79,6 +79,7 @@ return require('packer').startup(function()
    }
    use {
       'akinsho/bufferline.nvim',
+      tag = "*",
       requires = 'kyazdani42/nvim-web-devicons',
       config="require('cfg/bufferline')"
    }
@@ -89,7 +90,7 @@ return require('packer').startup(function()
       config="require('cfg/gitsigns')"
    }
 
-   use 'akinsho/nvim-toggleterm.lua'
+   use 'akinsho/toggleterm.nvim'
    use {
       'folke/which-key.nvim',
       config="require('cfg/wk')"

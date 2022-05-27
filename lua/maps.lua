@@ -16,6 +16,7 @@ vim.keymap.set('n', '<leader>x', ':bprevious|bdelete #<cr>')
 vim.keymap.set('n', '<leader>X', ':bd<cr>')
 vim.keymap.set('n', '<c-n>', ':cnext<cr>')
 vim.keymap.set('n', '<c-p>', ':cprevious<cr>')
+vim.keymap.set('n', 'gp', '`[v`]')
 
 -- use the same emacs (shell) keybindings for cmdline
 vim.keymap.set('c', '<c-a>', '<home>')
