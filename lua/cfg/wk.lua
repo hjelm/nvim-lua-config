@@ -90,9 +90,10 @@ wk.register({
 })
 
 wk.register({
-    ["<leader>e"] = { name = "+default files" },
-    ["<leader>en"] = {"<cmd>e ~/dev/notes/zimpler-notes.md<cr>", "edit zimpler-notes.md"},
-    ["<leader>ez"] = {"<cmd>e ~/.zshrc<cr>", "edit .zshrc"},
+    ['<leader>e'] = {'<cmd>NvimTreeFindFileToggle<cr>', 'Nvim-Tree (File Toggle)'},
+    -- ["<leader>e"] = { name = "+default files" },
+    -- ["<leader>en"] = {"<cmd>e ~/dev/notes/zimpler-notes.md<cr>", "edit zimpler-notes.md"},
+    -- ["<leader>ez"] = {"<cmd>e ~/.zshrc<cr>", "edit .zshrc"},
 })
 
 wk.register({
